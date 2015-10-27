@@ -4,13 +4,13 @@
    Version | v1.0
    License | MIT License
 =========================================================*/
-(function($){
+;(function($){
+	
+	"use strict";
 	
 	$.fn.instaJS = function(settings){
-
-
+	// default settings
         var settings = $.extend({
-
             username     : null,        // a text string, username of Instagram
             accessToken  : null,        // a base64 (for security) string, required 
             limit        : 4,           // photos limit, default 4
@@ -21,7 +21,6 @@
                                 <img src="{{photo_url}}" alt="{{photo_caption}}"></a>\
                                 <p class="{{caption_class}}">{{photo_caption}}</p>\
                             </article>'
-            
         }, settings);
 
         /** FUNCTIONS **/        
@@ -45,7 +44,7 @@
                           
                     },
                     error: function(e) {
-                       console.log('something went wrong');
+                       console.log('InstaJS | something went wrong; get_feed::error');
                     }
                 });                
 
@@ -82,7 +81,7 @@
                            });
                    	},
                    	error: function(e) {
-                          console.log('something went wrong');
+                           console.log('InstaJS | something went wrong; get_id::error');
                    	}
                    });   
 
@@ -91,11 +90,11 @@
         var instaJSContainer = $(this);
 
         if (typeof settings.username === 'undefined' || settings.username === null) {
-            console.log('the username is requireed, please provide it'); 
+            console.log('InstaJS | the username is requireed, please provide it'); 
             return false;
         }
         if (typeof settings.accessToken === 'undefined' || settings.accessToken === null) {
-            console.log('an access token is requireed to access the API resource'); 
+            console.log('InstaJS | 'an access token is requireed to access the API resource'); 
             return false;
         }
        
