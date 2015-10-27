@@ -27,7 +27,7 @@
         function get_feed(userid) {
            
                 $.ajax({
-                    url: 'https://api.instagram.com/v1/users/' + userid + '//media/recent/',
+                    url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent/',
                     type: 'GET',
                     dataType: 'jsonp',
                     data: {
