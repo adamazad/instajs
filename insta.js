@@ -94,7 +94,7 @@
             return false;
         }
         if (typeof settings.accessToken === 'undefined' || settings.accessToken === null) {
-            console.log('InstaJS | 'an access token is requireed to access the API resource'); 
+            console.log('InstaJS | an access token is requireed to access the API resource'); 
             return false;
         }
        
